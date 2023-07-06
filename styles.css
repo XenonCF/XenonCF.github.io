@@ -13,7 +13,7 @@
 
 html{
   min-height: 100vh;
-  background-color: var(--color4);
+  background-color: var(--color3);
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -36,6 +36,50 @@ nav a{
 
 nav a:hover{
   background-color: var(--color1);
+}
+
+#welcome-section{
+  height: 93vh;
+  background-color: var(--color2);
+  text-align: center;
+  color: var(--color5);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction: column;
+}
+
+#welcome-section h1{
+  font-size: 50px;
+}
+
+#welcome-section p{
+  font-size: 25px;
+}
+
+#projects{
+  display: grid;
+  margin: auto;
+  grid-template-columns: auto auto auto;
+  gap: 1em;
+  justify-content: center;
+  padding-bottom: 3em;
+}
+
+#projects h1{
+  grid-column: 1/4;
+  text-align: center;
+  text-decoration: underline;
+  font-weight: bolder;
+  padding: 1em;
+}
+
+#projects article{
+  width: 350px;
+}
+
+#projects img{
+  width: 100%;
 }
 
 footer{
