@@ -9,18 +9,26 @@
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html{
   min-height: 100vh;
+  min-width: 375px;
   background-color: var(--color3);
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body{
+  position: relative;
 }
 
 nav{
-  padding: 1em;
   background: linear-gradient(90deg, var(--color1) , var(--color2) 75%);
-  position: sticky;
+  position: fixed;
+  width: 100%;
+  padding: 1em 0;
   top: 0;
   text-align: end;
   border-bottom: solid 2px var(--color1);
@@ -28,8 +36,8 @@ nav{
 
 nav a{
   text-decoration: none;
-  padding: 0.5em;
-  font-size: 1.4em;
+  font-size: 1.5em;
+  padding: 0.7em;
   color: var(--color5);
   border-radius: 0% 0% 13% 13%;
 }
@@ -38,8 +46,21 @@ nav a:hover{
   background-color: var(--color1);
 }
 
-#welcome-section{
-  height: 93vh;
+@media (max-width: 450px) {
+  nav{
+    position: absolute;
+    text-align: center;
+    padding: 0;
+  }
+  nav a{
+    display: block;
+  }
+}
+
+#welcome-section, #contact{
+  height: 100vh;
+  width: 100%;
+  padding: 3.7em 0;
   background-color: var(--color2);
   text-align: center;
   color: var(--color5);
@@ -49,43 +70,87 @@ nav a:hover{
   flex-direction: column;
 }
 
-#welcome-section h1{
+@media (max-width: 425px) {
+  #contact{
+    padding-top: 0;
+  }
+
+  #welcome-section{
+    padding-top: 11.7em;
+  }
+}
+
+#welcome-section h1, #contact h1{
   font-size: 50px;
 }
 
-#welcome-section p{
+#welcome-section p, #contact p{
   font-size: 25px;
 }
 
 #projects{
-  display: grid;
-  margin: auto;
-  grid-template-columns: auto auto auto;
-  gap: 1em;
-  justify-content: center;
-  padding-bottom: 3em;
+  padding-top: 3.7em;
+}
+
+@media (max-width: 425px) {
+  #projects{
+    padding-top: 0;
+  }
 }
 
 #projects h1{
-  grid-column: 1/4;
   text-align: center;
   text-decoration: underline;
   font-weight: bolder;
   padding: 1em;
 }
 
-#projects article{
-  width: 350px;
+.projects-container{
+  display: grid;
+  margin: auto;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, 350px);
+  gap: 1em;
+  justify-content: center;
+  padding-bottom: 3em;
+
+}
+
+@media (min-width: 1100px) {
+  .projects-container{
+    grid-template-columns: repeat(3, 350px);
+  }
 }
 
 #projects img{
   width: 100%;
 }
 
-footer{
+.project-tile a{
+  text-decoration: none;
+  color: var(--color5);
+  text-align: center;
+  background-color: var(--color2);
+  padding-bottom: 2em;
+}
+
+#socials{
   padding: 1em;
+}
+
+#socials a{
+  text-decoration: none;
+  color: var(--color5);
+  padding: 0 0.5em;
+  font-size: 1.5em;
+}
+
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1em 0;
   background: linear-gradient(90deg, var(--color1) , var(--color2) 75%);
   text-align: end;
   border-top: solid 2px var(--color1);
-  box-sizing: border-box;
 }
